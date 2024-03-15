@@ -12,8 +12,9 @@ public class Lector {
                 try (BufferedReader br = new BufferedReader(new FileReader(f))) {
                     StringBuilder sb = new StringBuilder();
                     String linea;
-                    while ((linea = br.readLine()) != null) {
-                        sb.append(linea);
+                    while ((linea = br.readLine()) != null) {       
+                        sb.append(linea + " ");
+                
                     }
                     return sb.toString();
                 }
