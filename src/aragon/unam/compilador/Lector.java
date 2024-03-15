@@ -2,6 +2,7 @@ package aragon.unam.compilador;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Lector {
     public String leerArchivo(String nombreArchivo) {
@@ -10,6 +11,7 @@ public class Lector {
         if (f.exists()) {
             try {
                 try (BufferedReader br = new BufferedReader(new FileReader(f))) {
+                	
                     StringBuilder sb = new StringBuilder();
                     String linea;
                     while ((linea = br.readLine()) != null) {       
