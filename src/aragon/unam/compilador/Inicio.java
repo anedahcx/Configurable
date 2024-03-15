@@ -5,13 +5,15 @@ import javax.swing.*;
 public class Inicio {
     public static void main(String[] args) {
         Lector lector = new Lector();
-        String config = lector.leerArchivo("fuente.txt");
+        String[] config = lector.leerArchivo("fuente.txt");
         
         if (config != null) {
-        	// almacenar la configuración
-            AFDConfig configurable = new AFDConfig(config);
-            // obtiene la matriz
+        	AFDConfig configurable = new AFDConfig(config);
             int[][] matrix = configurable.getMatrix();
+//        	// almacenar la configuración
+//            AFDConfig configurable = new AFDConfig(config);
+//            // obtiene la matriz
+//            int[][] matrix = configurable.getMatrix();
             
             Lexico app = new Lexico(matrix);
             app.setToken(JOptionPane.showInputDialog("INGRESE LA PALABRA A ACEPTAR"));
