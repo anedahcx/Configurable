@@ -16,7 +16,7 @@ public class AFDConfig {
             alfa = new String[0];
         }
         
-        
+        //carga
         for (int c = 2; c < lineas.length; c++) {
             String[] elem = lineas[c].split("\\s+");
             for (int f = 0; f < elem.length; f++) {
