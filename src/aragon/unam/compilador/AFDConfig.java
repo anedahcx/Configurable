@@ -15,14 +15,15 @@ public class AFDConfig {
         } else {
             alfa = new String[0];
         }
-
-        for (int i = 2; i < lineas.length; i++) { // Cambiado a < en lugar de <=
-            String[] elem = lineas[i].split("\\s+");
-            int fila = Integer.parseInt(elem[0]);
-            int columna = Integer.parseInt(elem[1]);
-            int valor = Integer.parseInt(elem[2]);
-            matrix[fila][columna] = valor;
+        
+        
+        for (int c = 2; c < lineas.length; c++) {
+            String[] elem = lineas[c].split("\\s+");
+            for (int f = 0; f < elem.length; f++) {
+                matrix[c - 2][f] = Integer.parseInt(elem[f]);
+            }
         }
+        
     }
 
     public int[][] getMatrix() {
