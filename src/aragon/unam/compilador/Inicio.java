@@ -17,7 +17,7 @@ public class Inicio {
 //            // obtiene la matriz
 //            int[][] matrix = configurable.getMatrix();
             
-            Lexico app = new Lexico(matrix);
+            Lexico app = new Lexico(matrix, columnasAlfa);
             app.setToken(JOptionPane.showInputDialog("INGRESE LA PALABRA A ACEPTAR"));
             
             try {
