@@ -6,6 +6,7 @@ public class AFDConfig {
 
     public AFDConfig(String[] lineas) {
         String[] dim = lineas[0].split("\\s+");
+        String[] dimAlfa = lineas[1].split("\\s+");
         int filas = Integer.parseInt(dim[0]);
         int columnas = Integer.parseInt(dim[1]);
         matrix = new int[filas][columnas];

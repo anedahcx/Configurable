@@ -10,6 +10,8 @@ public class Inicio {
         if (config != null) {
         	AFDConfig configurable = new AFDConfig(config);
             int[][] matrix = configurable.getMatrix();
+            String[] columnasAlfa = configurable.getAlfa();
+            
 //        	// almacenar la configuración
 //            AFDConfig configurable = new AFDConfig(config);
 //            // obtiene la matriz

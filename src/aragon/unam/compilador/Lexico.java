@@ -1,11 +1,14 @@
 package aragon.unam.compilador;
 
 public class Lexico {
+
     private int indice = 0;
     private int error = -1;
-    private int espacio = 0;
-    private int estado = 1;
+    private int aceptar = 1;
+
+    private int estado = 0;
     private int entrada = 0;
+
     private int[][] matrix;
 
     private String token;
@@ -37,20 +40,15 @@ public class Lexico {
                 entrada = 1;
             } else if (Herramientas.finCadena(c)) {
                 entrada = 2;
-                espacio++;
-                if (espacio >= 0) {
-                    error = 0;
-                }
             } else {
                 error = 0;
             }
             if (error != 0) {
-                entrada = matrix[estado][entrada];
+                estado = matrix[estado][entrada];
             } else {
-                throw new Exception("Error en el caracter: " + c);
+                throw new Exception("Palabra no valida");
             }
-
-        } while (indice < token.length());
+        } while (!Herramientas.finCadena(c));
         return estado;
     }
 }
